@@ -12,8 +12,8 @@ This is the official pytorch implementation of the paper:
 
 Two publicly-accessible datasets are used in this work.
 
-- IDRiD for training lesion detection network [[Link](https://idrid.grand-challenge.org/ )].
-- EyePACS for contrastive learning and evaluation [[Link](https://www.kaggle.com/c/diabetic-retinopathy-detection/data)].
+- IDRiD for training lesion detection network [[link](https://idrid.grand-challenge.org)].
+- EyePACS for contrastive learning and evaluation [[link](https://www.kaggle.com/c/diabetic-retinopathy-detection/data)].
 
 
 
@@ -21,7 +21,7 @@ Two publicly-accessible datasets are used in this work.
 
 ### Lesion detection network
 
-A wonderful object detection toolbox [MMDetection](https://github.com/open-mmlab/mmdetection) are used for lesion detection. A trained model and predicted results can be downloaded [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases/tag/v1.0). Note that the model has a relatively poor generalization ability and cannot precisely predict lesions of fundus images from EyePACS because of the limited training samples of IDRiD. If you want to train your own detection model, please follow the instruction [here](./detection.README.md).
+A wonderful object detection toolbox [MMDetection](https://github.com/open-mmlab/mmdetection) are used for lesion detection. A trained model and predicted results can be downloaded [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases/tag/v1.0). Note that the model has a relatively poor generalization ability and cannot precisely predict lesions of fundus images from EyePACS because of the limited training samples of IDRiD. If you want to train your own detection model, please follow the instruction [here](./detection/README.md).
 
 
 
