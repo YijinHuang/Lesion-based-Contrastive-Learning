@@ -1,0 +1,4 @@
+torch==1.5.1
+tensorboard==2.2.1
+torchvision==0.6.0
+tqdm==4.50.2
