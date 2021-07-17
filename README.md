@@ -49,19 +49,19 @@ $ pip install -r requirements.txt
 
 1. Download EyePACS dataset. Then run `tools/crop.py` to remove the black border of images and resize them to 512 x 512.
 2. Rename all images as 'id_eyeSide.jpeg', where 'id' here is the id of images given by EyePACS and 'eyeSide' is left or right. Then move all images into a folder.
-3. Download the provided lesion predicted result, which is a pickle file containing a dict as follows:
+3. Download the provided [lesion predictions](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases/tag/v1.0), which is a pickle file containing a dict as follows:
 
 ```python
 predictions = {
     'train': {
-        'id_eyeSide.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
-        'id_eyeSide.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
-        'id_eyeSide.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
+        '{id}_{eyeSide}.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
+        '{id}_{eyeSide}.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
+        '{id}_{eyeSide}.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
         ...
     },
     'val': {
-        'id_eyeSide.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
-        'id_eyeSide.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
+        '{id}_{eyeSide}.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
+        '{id}_{eyeSide}.jpeg': [(x1, y1, x2, y2), ..., (x1, y1, x2, y2)],
         ...
     }
 }
@@ -69,7 +69,7 @@ predictions = {
 
 #### Training
 
-1. Update 'data_path' and 'data_index' in `config.py`, where 'data_path' is the folder containing preprocessed images and 'data_index' is the pickle file with lesion predicted results. You can update other training configurations and hyperparameters in `config.py` for your customized dataset.
+1. Update 'data_path' and 'data_index' in `config.py`, where 'data_path' is the folder containing preprocessed images and 'data_index' is the pickle file with lesion predicted results. You can update other training configurations and hyper-parameters in `config.py` for your customized dataset.
 2. Run to train:
 
 ```shell
