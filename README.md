@@ -2,7 +2,7 @@
 
 This is the official pytorch implementation of the paper:
 
-> Yijin Huang, Li Lin, Pujin Cheng, Junyan Lyu, Xiaoying Tang. Lesion-based Contrastive Learning for Diabetic Retinopathy Grading from Fundus Images. MICCAI 2021.
+> Yijin Huang, Li Lin, Pujin Cheng, Junyan Lyu, Xiaoying Tang. Lesion-based Contrastive Learning for Diabetic Retinopathy Grading from Fundus Images. MICCAI 2021 [[preprint](https://arxiv.org/abs/2107.08274)].
 
 ![](./imgs/framework.png)
 
