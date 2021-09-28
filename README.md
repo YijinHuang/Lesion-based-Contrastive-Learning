@@ -2,7 +2,7 @@
 
 This is the official pytorch implementation of the paper:
 
-> Yijin Huang, Li Lin, Pujin Cheng, Junyan Lyu, Xiaoying Tang. Lesion-based Contrastive Learning for Diabetic Retinopathy Grading from Fundus Images. MICCAI 2021 [[preprint](https://arxiv.org/abs/2107.08274)].
+> Huang, Y., Lin, L., Cheng, P., Lyu, J. and Tang, X., 2021, September. Lesion-Based Contrastive Learning for Diabetic Retinopathy Grading from Fundus Images. In *International Conference on Medical Image Computing and Computer-Assisted Intervention* (pp. 113-123). Springer, Cham. [[link](https://link.springer.com/chapter/10.1007/978-3-030-87196-3_11)] [[arxiv](https://arxiv.org/abs/2107.08274)]
 
 ![](./imgs/framework.png)
 
@@ -103,3 +103,19 @@ A 2D image classification framework [pytorch-classification](https://github.com/
 ## Acknowledgment
 
 Thanks for [SupContrast](https://github.com/HobbitLong/SupContrast) for the implementation of contrastive loss, kaggle team [o_O](https://github.com/sveitser/kaggle_diabetic) for the preprocessing code for fundus images.
+
+
+
+## Citation
+
+```
+@inproceedings{huang2021lesion,
+  title={Lesion-Based Contrastive Learning for Diabetic Retinopathy Grading from Fundus Images},
+  author={Huang, Yijin and Lin, Li and Cheng, Pujin and Lyu, Junyan and Tang, Xiaoying},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={113--123},
+  year={2021},
+  organization={Springer}
+}
+```
+
