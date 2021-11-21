@@ -101,10 +101,11 @@ import torch
 import torch.nn as nn
 from torchvision import models
 
-net = models.resnet50()
-# Our  model outputs the score of DR for classification. See https://arxiv.org/pdf/2110.14160.pdf for more details.
-net.fc = nn.Linear(net.fc.in_features, 1)
-net.load_state_dict(weights, strict=True)
+weights = torch.load('resnet50_128_08_100.pt')
+model = models.resnet50()
+# Our model outputs the score of DR for classification. See https://arxiv.org/pdf/2110.14160.pdf for more details.
+model.fc = nn.Linear(model.fc.in_features, 1)
+model.load_state_dict(weights, strict=True)
 ```
 
 To load the the models trained by lesion-based contrastive learning:
@@ -113,9 +114,10 @@ To load the the models trained by lesion-based contrastive learning:
 import torch
 from torchvision import models
 
-resnet = models.resnet50()
+weights = torch.load('resnet50_128_08.pt')
+model = models.resnet50()
 # Weights of fully connected layer are removed in the file, so set strict to be False.
-resnet.load_state_dict(weights, strict=False)
+model.load_state_dict(weights, strict=False)
 ```
 
 
