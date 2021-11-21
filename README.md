@@ -88,13 +88,41 @@ $ tensorborad --logdir=/path/to/your/log --port=6006
 
 #### Evaluation
 
-A 2D image classification framework [pytorch-classification](https://github.com/YijinHuang/pytorch-classification) is adopted to perform linear evaluation and transfer capacity evaluation. Please follow the instruction in that repository for evaluation. We do not provide the configurations for training the DR grading network because they are involved in our other paper under review. We will update it once that paper is accepted or published. The model fine-tuned on the full training set (kappa of 0.8322 on the test set) can be downloaded [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases/tag/v1.0).
+A 2D image classification framework [pytorch-classification](https://github.com/YijinHuang/pytorch-classification) is adopted to perform linear evaluation and transfer capacity evaluation. Please follow the instruction in that repository for evaluation. The model fine-tuned on the full training set (kappa of 0.8322 on the test set) can be downloaded [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases). The training configurations can be found in our other [paper](https://arxiv.org/pdf/2110.14160.pdf).
+
+#### Load Trained Models
+
+The model fine-tuned on the full EyePACS dataset and the models trained by lesion-based contrastive learning are provided [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases). TorchVision is utilized to build the model, so please the version of the packages in the `requrements.txt` to avoid unexpected errors. 
+
+To load the fine-tuned model:
+
+```python
+import torch
+import torch.nn as nn
+from torchvision import models
+
+net = models.resnet50()
+# Our  model outputs the score of DR for classification. See https://arxiv.org/pdf/2110.14160.pdf for more details.
+net.fc = nn.Linear(net.fc.in_features, 1)
+net.load_state_dict(weights, strict=True)
+```
+
+To load the the models trained by lesion-based contrastive learning:
+
+```python
+import torch
+from torchvision import models
+
+resnet = models.resnet50()
+# Weights of fully connected layer are removed in the file, so set strict to be False.
+resnet.load_state_dict(weights, strict=False)
+```
 
 
 
 ## Future Plan
 
-- [ ] Update the configurations for training the DR grading network.
+- [x] Update the configurations for training the DR grading network.
 - [ ] The lesion-based contrastive learning model trained on the full EyePACS dataset.
 - [ ] Build dataset using better lesion detection models.
 
