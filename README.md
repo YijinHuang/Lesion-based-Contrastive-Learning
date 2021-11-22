@@ -33,7 +33,7 @@ Recommended environment:
 
 - python 3.8+
 - pytorch 1.5.1
-- torchvision 0.6.0
+- torchvision 0.6.1
 - tensorboard 2.2.1
 - tqdm
 
