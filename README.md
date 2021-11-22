@@ -92,7 +92,7 @@ A 2D image classification framework [pytorch-classification](https://github.com/
 
 #### Load Trained Models
 
-The model fine-tuned on the full EyePACS dataset and the models trained by lesion-based contrastive learning are provided [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases). TorchVision is utilized to build the model, so please the version of the packages in the `requrements.txt` to avoid unexpected errors. 
+The model fine-tuned on the full EyePACS dataset and the models trained by lesion-based contrastive learning are provided [here](https://github.com/YijinHuang/Lesion-based-Contrastive-Learning/releases). TorchVision is utilized to build the model, so please install the required packages with the version in the `requrements.txt` to avoid unexpected errors. 
 
 To load the fine-tuned model:
 
