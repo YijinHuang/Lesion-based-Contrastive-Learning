@@ -1,7 +1,8 @@
 import os
 import pickle
+import warnings
 
-import apex
+# import apex
 import torch
 from tqdm import tqdm
 from torch.utils.data import DataLoader
@@ -36,7 +37,9 @@ def generate_model(network, net_config, device, pretrained=True, checkpoint=None
         print('Load weights form {}'.format(checkpoint))
 
     if device == 'cuda' and torch.cuda.device_count() > 1:
-        model = apex.parallel.convert_syncbn_model(model)
+        # model = apex.parallel.convert_syncbn_model(model)
+        warnings.warn('Data parallel is used for multiple GPUs training. \
+            If you would like to apply synchronous batch normalization, please install apex and use apex.parallel.convert_syncbn_model.')
         model = torch.nn.DataParallel(model)
 
     return model

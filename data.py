@@ -63,7 +63,6 @@ class LesionPatchGenerator(Dataset):
 
     def __getitem__(self, index):
         img_path, lesions = self.imgs[index]
-        img_path = img_path.replace('split_eyepacs_cropped', 'split_eyepacs_hq_512')
         img = self.pil_loader(img_path)
 
         bbox = random.choice(lesions)
